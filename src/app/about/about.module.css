@@ -10,10 +10,10 @@
 }
 .title {
   font-size: 20px;
-  color: #3673fd;
+  color: var(--btn);
 }
 .subtitle {
-  color: var(--btn);
+  font-size: 30px;
 }
 .desc {
   font-size: 20px;
@@ -30,7 +30,7 @@
   gap: 10px;
 }
 .box h1 {
-  color: #3673fd;
+  color: var(--btn);
 }
 
 .imgContainer {
