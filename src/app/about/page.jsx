@@ -3,13 +3,37 @@ import styles from "./about.module.css";
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className={styles.container}>
+      <div className={styles.textContainer}>
+        <h4 className={styles.title}> About Agency</h4>
+        <h1 className={styles.subtitle}>
+          {" "}
+          We create digital ideas that are bigger, bolder,braver and better.{" "}
+        </h1>
+        <p className={styles.desc}>
+          {" "}
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum,
+          numquam modi sequi placeat facere doloremque error ea magnam quasi
+          maiores animi! Eveniet, esse! Debitis adipisci aut, dolores quia non
+          nihil?
+        </p>
+        <div className={styles.boxes}>
+          <div className={styles.box}>
+            <h1>10 K+</h1>
+            <p> Year of experience</p>
+          </div>
+          <div className={styles.box}>
+            <h1>10 K+</h1>
+            <p> Year of experience</p>
+          </div>{" "}
+          <div className={styles.box}>
+            <h1>10 K+</h1>
+            <p> Year of experience</p>
+          </div>
+        </div>
+      </div>
       <div className={styles.imgContainer}>
-        <Image
-          src="https://images.unsplash.com/photo-1519827118356-a59fe24cd3ff?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
-          fill
-        />
+        <Image src="/about.png" alt="" fill className={styles.Img} />
       </div>
     </div>
   );
