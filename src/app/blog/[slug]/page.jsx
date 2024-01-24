@@ -29,24 +29,14 @@ const SinglePostPage = async ({ params }) => {
   const post = await getPost(slug);
   return (
     <div className={styles.container}>
-      <div className={styles.imgContainer}>
-        <Image
-          className={styles.img}
-          src="https://images.unsplash.com/photo-1593376853899-fbb47a057fa0?q=80&w=1315&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
-          fill
-        />
-      </div>
+      {post.img && (
+        <div className={styles.imgContainer}>
+          <Image className={styles.img} src={post.img} alt="" fill />
+        </div>
+      )}
       <div className={styles.textContainer}>
-        <h1 className={styles.title}>{post?.title} </h1>
+        <h1 className={styles.title}>{post.title} </h1>
         <div className={styles.detail}>
-          <Image
-            className={styles.avatar}
-            src="https://images.unsplash.com/photo-1533228876829-65c94e7b5025?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-            width={50}
-            height={50}
-          />
           {post && (
             <Suspense fallback={<div> Loading...</div>}>
               <PostUser userId={post.userId} />
@@ -54,10 +44,14 @@ const SinglePostPage = async ({ params }) => {
           )}
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Publish</span>
-            <span className={styles.detailValue}> 2024</span>
+            <span className={styles.detailValue}>
+              {post.createdAt
+                ? post.createdAt.toString().slice(4, 16)
+                : "Not available"}
+            </span>
           </div>
         </div>
-        <div className={styles.content}>{post?.body}</div>
+        <div className={styles.content}>{post.desc}</div>
       </div>
     </div>
   );
