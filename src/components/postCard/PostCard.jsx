@@ -3,7 +3,7 @@ import Image from "next/image";
 // import { format } from "date-fns";
 import styles from "./postCard.module.css";
 
-const PostCard = () => {
+const PostCard = ({ post }) => {
   //   const myDate = new Date();
   //   const formattedDate = format(myDate, "yyyy-MM-dd HH:mm:ss");
 
@@ -22,15 +22,9 @@ const PostCard = () => {
         {/* <span className={styles.date}>{formattedDate}</span> */}
       </div>
       <div className={styles.bottom}>
-        <h1 className={styles.title}>Title</h1>
-        <p className={styles.desc}>
-          {" "}
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi nemo
-          quaerat totam sit aliquid distinctio, beatae explicabo repellat id
-          amet vitae neque placeat, porro, doloremque culpa odio. In,
-          repellendus officia?
-        </p>
-        <Link className={styles.link} href="/blog/post">
+        <h1 className={styles.title}>{post.title}</h1>
+        <p className={styles.desc}>{post.body}</p>
+        <Link className={styles.link} href={`/blog/${post.id}`}>
           READ MORE
         </Link>
       </div>
