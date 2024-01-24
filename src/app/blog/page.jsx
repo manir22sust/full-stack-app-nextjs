@@ -13,7 +13,10 @@ const getData = async () => {
   }
   return res.json();
 }; */
-
+export const metadata = {
+  title: "Blog Page",
+  description: "Blog Description",
+};
 const BlogPage = async () => {
   /*   // FETCH DATA WITH AN API
   const posts = await getData(); */
